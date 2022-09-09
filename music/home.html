@@ -1,0 +1,11 @@
+<h1 style="text-align:center">html5音乐播放器<h1>
+<audio src="" id="mp3" style="text-align:center"></audio>
+<input type="text" id="url"><input>
+<button onclick="play_music()">提交</button>
+<script>
+var mp31 = document.getElementById("mp3")
+var url1 = document.getElementById("url")
+function play_music(){
+  mp31.src = url1
+}
+</script>
