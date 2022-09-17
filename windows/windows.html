@@ -1,3 +1,58 @@
+
+<script>
+window.onload = function(){
+var menu = document.getElementById('menu');
+document.body.oncontextmenu = function(e){ // 自定义body元素的鼠标事件处理函数
+var e = e || window.event;
+e.preventDefault(); //阻止系统右键菜单 IE8-不支持
+// 显示自定义的菜单调整位置
+let scrollTop =
+document.documentElement.scrollTop || document.body.scrollTop;// 获取垂直滚动条位置
+let scrollLeft =
+document.documentElement.scrollLeft || document.body.scrollLeft;// 获取水平滚动条位置
+menu.style.display = 'block';
+menu.style.left = e.clientX + scrollLeft + 'px';
+menu.style.top = e.clientY + scrollTop + 'px';
+}
+// 鼠标点击其他位置时隐藏菜单
+document.onclick = function(){
+menu.style.display = 'none';
+}
+}
+</script>
+<style>
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+p{
+margin-top: 200px;
+}
+ul li{
+    list-style-type: none;
+    margin: 10px 0;
+    text-align: center;
+}
+#menu{
+    border:1px solid #ccc;
+    background: #eee;
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    display: none;
+}
+</style>
+</head>
+<body style="overflow:auto">
+
+<div id="menu">
+<ul>
+<li><a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" >1</a></li>
+<li><a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" >2</a></li>
+<li><a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" >3</a></li>
+</ul>
+</div>
+
 <!DOCTYPE html>
 <html lang="en">
 <script>
@@ -13,6 +68,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="box" style="height:600px;width:500px">
     <div id="win">
         <ul id="app">
             <li>
@@ -29,11 +85,12 @@
             </li>
         </ul>
     </div>
+    </div>
 </body>
 
 <style>
     #win{
-        background-image: url("./bg.png");
+
         background-position: 880px,center;
         height: 550px;
         border: #ffffff 1px solid;
